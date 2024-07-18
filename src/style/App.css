@@ -1,0 +1,455 @@
+/* Font Imports */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&family=Young+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+/* Style */
+html {
+  font-family: "Playfair Display", Times, serif;
+  --cursor-color: white;
+}
+
+body {
+  overflow-x: hidden;
+  background: linear-gradient(-45deg, #a89a87, #afcf7e, #99bdff, #87a890);
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+
+nav {
+    font-size: 1.6vw;
+    background-color: #08153bab;
+    color: white;
+    padding: 0.8rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1.6rem;
+    border-radius: 10px;
+    /* border-style: double; */
+    border-color: #c0c0c0;
+    box-shadow: 0px 0px 16px 8px #08153bab;
+}
+
+
+h1 {
+    color: rgb(255, 255, 255);
+    font-family: "Playfair Display", Times, serif;
+    font-weight: 100;
+    font-size: 8vw;
+    margin-bottom: 0;
+    margin-top: 9rem;
+}
+
+p {
+    color: rgb(255, 255, 255);
+    font-family: "Inconsolata", Times, serif;
+    /* font-size: 1.5em; */
+    font-size: 2vw;
+    font-weight: 400;
+}
+
+b,
+a,
+button {
+  font-family: "Inconsolata", Times, serif;
+  font-weight: 600;
+  /* font-size: */
+  /* text-align: right; */
+}
+
+button {
+    margin-left: 2vw;
+    /* text-align: right; */
+    background-color:#34312e00;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.3vw;
+}
+
+
+.bordered-section {
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+a[href^="#"] {
+  color: white;
+  text-decoration: none;
+  padding-left: 6vw;
+  text-align: right;
+}
+
+.headingtop {
+  margin-bottom: 0;
+}
+  
+.paragraphtop {
+  margin: auto;
+  width: 70%;
+  border: 3px solid rgb(255, 255, 255); /* Border style and color */
+  border-radius: 70px;
+  margin-top: -3rem;
+}
+
+.home-section {
+  margin-bottom: 4rem; 
+  text-align: center;
+}
+
+
+/* About Section */
+
+.about-section {
+    margin-top: 12rem;
+    margin-bottom: 7rem;
+    padding-bottom: 7rem;
+    background-color: #ecdeca;
+}
+
+
+.aboutmeword {
+  font-style: bold;
+  font-family: "Playfair Display", Times, serif;
+  /* font-size: 3em; */
+  font-weight: 800;
+  font-size: 9vw;
+  margin-left: 3rem;
+  color: rgb(55, 88, 255);
+}
+
+.content-container {
+  display: flex;
+}
+
+.about-left-paragraph {
+  flex: 1;
+  padding: 1rem;
+  padding-left: 3rem;
+  padding-right: 8rem;
+  padding-top: 8rem;
+  color: rgb(18, 121, 255);
+}
+
+.carousel-container {
+  overflow: hidden;
+  width: 24rem;
+  height: 32rem;
+  border-radius: 10px;
+  padding-right: 4rem;
+  padding-top: 8rem;
+}
+
+.carousel-track {
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-track img {
+  border-radius: 10px;
+}
+
+.skill-box {
+  margin-left: 3rem;
+  margin-right: 3rem;
+  text-align: center;
+}
+
+.skill-title {
+  text-align: center;
+  font-size: 4vw;
+  color:rgb(55, 88, 255)
+}
+
+.borderstyle {
+  color:rgb(55, 88, 255);
+  border-radius: 10px;
+  border: 3px solid rgb(55, 88, 255);
+  padding: 0.3rem;
+  margin: 1rem;
+}
+
+
+
+/* Gallery Styles */
+
+.gallery-container {
+  /* display: flex;  */
+  padding-left: 1rem;
+  /* margin: 1rem; */
+  /* padding-left:2vw; */
+  /* width: 100%; */
+  /* height: 20%; */
+  /* margin: auto; */
+  white-space: nowrap; /* Prevent boxes from wrapping to a new row */
+  /* overflow-x: auto; */
+}
+
+.boxlong {
+  /* width: 30vw; */
+  /*height: 38vh; */
+  padding-top: 2%;
+  margin: 1rem;
+  background-color: #e2f3ff;
+  border-radius: 10px;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 10px rgba(98, 98, 98, 1);
+  padding: 0.6rem;
+  
+  position: relative;
+  overflow: hidden;
+  display: inline-block; 
+  /* vertical-align: right;  */
+  width:44%;
+}
+
+.cropped-image {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  display: block;
+  /* object-fit: cover; */
+}
+
+.box {
+    background-color: #e2f3ff;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(98, 98, 98, 1);
+    padding: 0.6rem;
+    position: relative;
+    /* width: 20vw;
+    height: 44vh; */
+    padding-top: 1%;
+    margin: 1rem;
+    overflow: hidden;
+
+    display: inline-block; 
+    vertical-align: top; 
+    width:20%;
+}
+
+
+  
+.box:hover .caption {
+    opacity: 1;
+}
+
+.boxlong:hover .caption {
+    opacity: 1;
+}
+  
+.caption {
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    color: white; 
+    /* font-size: 1.2em;  */
+    font-size: 2vw;
+    text-align: center; 
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: normal;
+}
+
+.gallery-para {
+  color: rgb(84, 84, 84);
+  /* font-size: 1em; */
+  font-size: 1.8vw;
+  padding-top: 1%;
+  white-space: normal;
+}
+
+.emoji {
+  /* font-size: 2rem; */
+  font-size: 3vw;
+  /* text-align: center; */
+}
+
+
+
+
+/* Project Styles */
+
+.project {
+  
+  background-color: #3b445a;
+  margin-top: 14rem;
+  margin-bottom: 12rem;
+  padding-bottom: 12rem;
+}
+
+.project-style {
+  /* width: auto; */
+  /* max-width: none; */
+  
+  overflow-x: scroll !important;
+
+}
+
+.project-box {
+  margin-left: 5rem;
+  padding-top: 1rem;
+  margin-bottom: -4rem;
+  /* margin-bottom: 100px; */
+}
+
+.astrowave {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  margin-right: 4rem;
+}
+
+.project-title {
+  /* font-size: 4rem; */
+  font-family: "Playfair Display", Times, serif;
+  font-size: 8vw;
+}
+
+
+/* .box {
+    background-color: #e2f3ff;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(98, 98, 98, 1);
+    padding: 0.6rem;
+    position: relative;
+  
+    padding-top: 1%;
+    margin: 1rem;
+    overflow: hidden;
+
+    display: inline-block; 
+    vertical-align: top; 
+    width:20%;
+} */
+
+.projectname {
+  margin: 1rem;
+  font-size: 3vw;
+  font-style: oblique;
+}
+
+.projecttext {
+  margin: 1rem;
+}
+
+
+
+
+
+.boxproject {
+  background-color: rgb(30, 30, 30);
+  border-radius: 10px;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 10px rgb(0, 0, 0);
+  padding: 0.6rem;
+  margin-left: 4rem;
+  /* margin: 1rem; */
+  display: inline-block; 
+  vertical-align: top; 
+  width: 30vw;
+}
+
+.cropped-image.astrowave {
+  /* margin-bottom: 1rem; */
+  padding-left: 1rem;
+  /* border-radius: 10px; */
+  /* margin-right: 6rem; */
+  
+  width: 10vw; /* Adjust the width as needed */
+  height: 10vw;
+  /* width: 10vw;
+  height: 10vh; */
+}
+
+.logo {
+  font-size: 8vw;
+  margin-bottom: -1rem;
+  margin-top: -1rem;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  margin: 1rem;
+}
+
+.scrolltext {
+  margin-top: 2rem;
+  margin-left: 4rem;
+  padding: 8px;
+  width: 16%;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 3vw;
+  
+}
+
+.divider-symbol {
+  font-size: 10vw;
+  /* padding: auto; */
+  margin-bottom: -2rem;
+  margin-top: -2rem;
+  text-align: center;
+
+}
+
+/* Contact Section */
+.contact-section {
+  /* background-color: #000000; */
+}
+
+.contact-style {
+  text-align: center;
+  color: #eee;
+  /* line-height:4rem; */
+  /* line-height:7vh; */
+  /* font-size: 2.9em; */
+  font-size: 6vw;
+}
+
+.centered-word {
+  text-align: center;
+  color: #eee;
+  line-height: 10rem;
+  /* font-size: 2.4em; */
+  font-size: 9vw;
+  text-decoration: none;
+  font-family: "Playfair Display", Times, serif;
+  font-weight: 10;
+}
+
+.centered-word:hover {
+  color: rgb(123, 123, 123);
+}
+
+
+/* Footer Style */
+
+footer {
+  padding: 0.1rem; 
+  margin-top: 4rem;
+  color: white; /* Example text color */
+  text-align: left; /* Center align the text */
+  
+}
+
+
+@media (max-width: 390px) {
+  .nav {
+    display: block;
+  }
+}
