@@ -49,15 +49,17 @@ import poster3 from "./images/totebagredone.png";
 
 //Used in Project & Git
 import astrowavelogo from "./images/astrowavebeige.jpg";
-import astrowavepost from "./images/astrowave.PNG";
+// import astrowavepost from "./images/astrowave.PNG";
 import githubwhite from "./images/githubw.png";
 import fishtotebag from "./images/fishtote.JPG";
 
 
 //React Application
 function App() {
-  //Locomotive Scroll Constant
+  // Locomotive Scroll Constant
+  
   useEffect(() => {
+    // eslint-disable-next-line
     const scroll = new LocomotiveScroll({
       el: document.querySelector("[data-scroll-container]"),
       smooth: true,
