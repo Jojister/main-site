@@ -7,6 +7,7 @@ import AnimatedCursor from "react-animated-cursor";
 
 //Style Imports
 import "./style/App.css";
+import "./style/App-mobile.css"
 // import "./scripts/carousel-nav";
 // import "./scripts/language-toggle.js";
 
@@ -240,7 +241,7 @@ function App() {
           <br/> --------------------------
           </p> 
           
-          <p>
+          <p className="skill-box-line">
           <span className="borderstyle">Java</span>
           <span className="borderstyle">Kotlin</span> 
           <span className="borderstyle">Python</span>
@@ -249,17 +250,17 @@ function App() {
           <span className="borderstyle">Ruby</span>
           <span className="borderstyle">HTML&CSS</span>
           </p>
-          <p>
+          <p className="skill-box-line">
           <span className="borderstyle">SQL</span>
           <span className="borderstyle">MongoDB</span>
           <span className="borderstyle">Redis</span>
           </p>
-          <p>
+          <p className="skill-box-line">
           <span className="borderstyle">Adobe Suite</span>
           <span className="borderstyle">Microsoft Office</span>
           <span className="borderstyle">Google Suite</span>
           </p>
-          <p>
+          <p className="skill-box-line">
           <span className="borderstyle">Web Dev</span>
           <span className="borderstyle">Database Design</span>
           <span className="borderstyle">Object Oriented Programming</span>
@@ -270,7 +271,7 @@ function App() {
 
         {/* Gallery Section */}
         <section id="gallery">
-          <h1 style={{ marginLeft: "2rem" }}>
+          <h1 style={{ marginLeft: "2rem" }} className="gallery-title">
             {language === 'english' ? '✐ Gallery' : '✐ ガラリー'}
           </h1>
           <div className="gallery-container">
@@ -389,7 +390,7 @@ function App() {
                  </p> 
                 <img src={astrowavelogo} alt="Astrowave" className="cropped-image astrowave" />
                 
-                <p className="projecttext">
+                <p className="projecttext projecttextfix">
                 {language === 'english' ? <blockquote> CEO and Founder
                    <br/> Renewable jewelry company.
                    Our mission is to take broken down surfboards and recycle 
