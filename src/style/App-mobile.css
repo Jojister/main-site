@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   background: linear-gradient(-45deg, #a89a87, #afcf7e, #99bdff, #87a890);
   /* background: black; */
   animation: gradient 15s ease infinite;
@@ -133,9 +133,9 @@ a[href^="#"] {
   color: rgb(55, 88, 255);
 }
 
-.content-container {
+/* .content-container {
   
- }
+ } */
 
 .about-left-paragraph {
   /* flex: 1; */
@@ -148,7 +148,7 @@ a[href^="#"] {
 }
 
 .carousel-container {
-  overflow: hidden;
+  /* overflow: hidden; */
   width: 10rem;
   height: 13rem;
   border-radius: 10px;
@@ -174,7 +174,7 @@ a[href^="#"] {
 
 .skill-title {
   text-align: center;
-  font-size: 3vw;
+  font-size: 6vw;
   color:rgb(55, 88, 255)
 }
 
@@ -189,6 +189,7 @@ a[href^="#"] {
 
 .skill-box-line {
     padding:0.4rem;
+    /* padding-right: 2rem; */
 }
 
 
@@ -224,7 +225,7 @@ a[href^="#"] {
   padding: 0.2rem;
   
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
   display: inline-block; 
   /* vertical-align: right;  */
   width:41%;
@@ -249,7 +250,7 @@ a[href^="#"] {
     height: 44vh; */
     padding-top: 1%;
     margin: 1rem;
-    overflow: hidden;
+    /* overflow: hidden; */
 
     display: inline-block; 
     vertical-align: top; 
@@ -303,9 +304,9 @@ a[href^="#"] {
   
   background-color: #3b445a;
   margin-top: 16rem;
-  margin-bottom: 12rem;
-  padding-top:3rem;
-  padding-bottom: 12rem;
+  margin-bottom: 11rem;
+  padding-top:2rem;
+  padding-bottom: 14rem;
 }
 
 .project-style {
@@ -335,6 +336,7 @@ a[href^="#"] {
   font-family: "Playfair Display", Times, serif;
   font-size: 12vw;
   padding-bottom: 4rem;
+  margin-left:-2rem;
 }
 
 
@@ -361,6 +363,9 @@ a[href^="#"] {
   font-style: oblique;
 }
 
+.projecttext {
+    font-size: 4vw;
+}
 .projecttextfix {
   margin-left: -1.4rem;
 }
@@ -379,7 +384,7 @@ a[href^="#"] {
   /* margin: 1rem; */
   display: inline-block; 
   vertical-align: top; 
-  width: 43vw;
+  width: 58vw;
 }
 
 .cropped-image.astrowave {
@@ -428,9 +433,9 @@ a {
 }
 
 /* Contact Section */
-.contact-section {
-  /* background-color: #000000; */
-}
+/* .contact-section {
+  /* background-color: #000000; 
+} */
 
 .contact-style {
   text-align: center;

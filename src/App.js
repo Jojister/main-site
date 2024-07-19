@@ -251,9 +251,9 @@ function App() {
           <span className="borderstyle">JavaScript</span>
           <span className="borderstyle">Swift</span> 
           <span className="borderstyle">Ruby</span>
-          <span className="borderstyle">HTML&CSS</span>
           </p>
           <p className="skill-box-line">
+          <span className="borderstyle">HTML&CSS</span>
           <span className="borderstyle">SQL</span>
           <span className="borderstyle">MongoDB</span>
           <span className="borderstyle">Redis</span>
@@ -266,6 +266,8 @@ function App() {
           <p className="skill-box-line">
           <span className="borderstyle">Web Dev</span>
           <span className="borderstyle">Database Design</span>
+          </p>
+          <p className="skill-box-line">
           <span className="borderstyle">Object Oriented Programming</span>
           </p>
         </div>
