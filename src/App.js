@@ -144,7 +144,7 @@ function App() {
               Where <em>sketches</em> turn to <em>substance</em>
               </blockquote> :
                <blockquote>
-               <em>スケッチ</em>から<em>実物</em>へとなる空間
+               <em>スケッチ</em>から<em>実物</em>へとつながる空間
              </blockquote>}
 
               {/* Where <em>sketches</em> turn to <em>substance</em> */}
@@ -193,9 +193,9 @@ function App() {
               #traveling <br /> #Sucker4Adobe <br /> #Fujifilm
               </blockquote> :
                <blockquote>
-                色んな趣味を持っており、絵画（油絵）、サーフ、ギター、投資や世界を旅してます。
+                多様な趣味を持っており、絵画（油絵）、サーフ、ギター、投資や世界を旅してます。
                 <br /> <br />
-                カリア方向は金融かベンチャー企業に勤める予定です。英語と基本のフランス語を喋れます。
+                キャリア方向は金融かベンチャー企業に勤める予定です。英語と基本のフランス語を喋れます。
                 #旅行 <br /> #アドビ愛好者 <br /> #フジフイルム
                 </blockquote>}
               {/* Dabbling in many passions, I bounce around from Boston, Dallas,
@@ -277,7 +277,7 @@ function App() {
         {/* Gallery Section */}
         <section id="gallery">
           <h1 style={{ marginLeft: "2rem" }} className="gallery-title">
-            {language === 'english' ? '✐ Gallery' : '✐ ガラリー'}
+            {language === 'english' ? '✐ Gallery' : '✐ ギャラリー'}
           </h1>
           <div className="gallery-container">
             <div className="box">
