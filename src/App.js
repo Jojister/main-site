@@ -173,11 +173,14 @@ function App() {
           className="bordered-section about-section"
           data-scroll-container
         >
-          <div className="content-container" data-scroll-container>
-            <p className="about-left-paragraph">
-              <span className="aboutmeword">
+          <div className="aboutmewordcontain">
+            <span className="aboutmeword">
               {language === 'english' ? 'About Me ✧' : 'アバウト ✧'}
               </span>
+          </div>
+          <div className="content-container" data-scroll-container>
+            <p className="about-left-paragraph">
+            
               <br /> <br />
               {language === 'english' ? <blockquote>
               Dabbling in many passions, you'll find me: painting

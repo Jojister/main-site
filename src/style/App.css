@@ -116,7 +116,11 @@ a[href^="#"] {
     padding-bottom: 7rem;
     background-color: #ecdeca;
 }
-
+.aboutmewordcontain {
+  margin-top: 6rem;
+  margin-left:3rem;
+  margin-bottom: -3rem;
+}
 
 .aboutmeword {
   font-style: bold;
@@ -124,7 +128,7 @@ a[href^="#"] {
   /* font-size: 3em; */
   font-weight: 800;
   font-size: 9vw;
-  margin-left: 3rem;
+  /* margin-left: 3rem; */
   color: rgb(55, 88, 255);
 }
 
@@ -134,10 +138,10 @@ a[href^="#"] {
 
 .about-left-paragraph {
   flex: 1;
-  padding: 1rem;
+  /* padding: 1rem; */
   padding-left: 3rem;
   padding-right: 8rem;
-  padding-top: 8rem;
+  /* padding-top: rem; */
   color: rgb(18, 121, 255);
 }
 
@@ -147,7 +151,7 @@ a[href^="#"] {
   height: 32rem;
   border-radius: 10px;
   padding-right: 4rem;
-  padding-top: 8rem;
+  padding-top: 4rem;
 }
 
 .carousel-track {
