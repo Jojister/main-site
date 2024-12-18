@@ -29,7 +29,7 @@ body {
 
 nav {
   font-size: 1.6vw;
-  background-color: #08153bab;
+  background-color: #344864;
   color: white;
   padding: 0.8rem;
   margin-left: 2rem;
@@ -56,7 +56,7 @@ p {
     font-family: "Inconsolata", Times, serif;
     /* font-size: 1.5em; */
     font-size: 2vw;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 b,
@@ -118,7 +118,7 @@ a[href^="#"] {
 }
 .aboutmewordcontain {
   margin-top: 6rem;
-  margin-left:3rem;
+  margin-left:7rem;
   margin-bottom: -3rem;
 }
 
@@ -139,7 +139,7 @@ a[href^="#"] {
 .about-left-paragraph {
   flex: 1;
   /* padding: 1rem; */
-  padding-left: 3rem;
+  padding-left: 4rem;
   padding-right: 8rem;
   /* padding-top: rem; */
   color: rgb(18, 121, 255);
@@ -150,7 +150,7 @@ a[href^="#"] {
   width: 24rem;
   height: 32rem;
   border-radius: 10px;
-  padding-right: 4rem;
+  padding-right: 8rem;
   padding-top: 4rem;
 }
 
@@ -163,32 +163,57 @@ a[href^="#"] {
 }
 
 .skill-box {
-  margin-left: 3rem;
-  margin-right: 3rem;
+  margin-left: 14rem;
+  margin-right: 14rem;
+  margin-top: 10rem;
+  margin-bottom: 4rem;
+  padding-top: -1rem;
+  padding-bottom: 3rem;
   text-align: center;
+  background-color: #344864;
+  border-radius: 10px;
+  border: 3px solid #344864;
+  box-shadow: 0 4px 10px #08153bab;
+  
+  
 }
 
 .skill-title {
   text-align: center;
   font-size: 4vw;
-  color:rgb(55, 88, 255)
+  color: white;
+  margin-top: 2.5rem;
+  margin-bottom: -1rem;
+  font-family: "Playfair Display", Times, serif;
+
 }
 
 .borderstyle {
-  color:rgb(55, 88, 255);
+  color: #344864;
   border-radius: 10px;
-  border: 3px solid rgb(55, 88, 255);
+  background-color: white;
+  border: 3px solid white;
+  box-shadow: 0 4px 10px #08153bab;
   padding: 0.3rem;
   margin: 1rem;
+}
+
+.skill-box-line {
+  padding-top: 1rem;
 }
 
 
 
 /* Gallery Styles */
 
+.gallery-title {
+  padding-left: 7rem;
+}
+
 .gallery-container {
   /* display: flex;  */
-  padding-left: 1rem;
+  padding-left: 7rem;
+  padding-right: 4rem;
   /* margin: 1rem; */
   /* padding-left:2vw; */
   /* width: 100%; */
@@ -290,6 +315,7 @@ a[href^="#"] {
   background-color: #3b445a;
   margin-top: 14rem;
   margin-bottom: 12rem;
+  
   padding-bottom: 12rem;
 }
 
@@ -302,7 +328,7 @@ a[href^="#"] {
 }
 
 .project-box {
-  margin-left: 5rem;
+  margin-left: 7rem;
   padding-top: 1rem;
   margin-bottom: -4rem;
   /* margin-bottom: 100px; */
@@ -359,7 +385,7 @@ a[href^="#"] {
   border: 2px solid #ffffff;
   box-shadow: 0 4px 10px rgb(0, 0, 0);
   padding: 0.6rem;
-  margin-left: 4rem;
+  margin-left: 7rem;
   /* margin: 1rem; */
   display: inline-block; 
   vertical-align: top; 
@@ -392,7 +418,7 @@ a {
 
 .scrolltext {
   margin-top: 2rem;
-  margin-left: 4rem;
+  margin-left: 7rem;
   padding: 8px;
   width: 16%;
   border: 2px solid #ffffff;

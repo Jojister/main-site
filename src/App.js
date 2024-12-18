@@ -44,6 +44,12 @@ import osakaspace from "./images/osakaspace.jpeg";
 import spacecraft from "./images/spacecraft.jpg";
 
 //Used in Gallery Row III
+import watercolorvenice from "./images/watercolorvenice.jpg";
+import oilspaceshuttle from "./images/oilspaceshuttle.jpg";
+import oilwaves from "./images/oilwaves.jpg";
+import oilmonet from "./images/oilwomanwithumbrella.jpg";
+
+//Used in Gallery Row IV
 import poster1 from "./images/multimediaflyerfinal.png";
 import poster2 from "./images/bobrossMMAC.png";
 import poster3 from "./images/totebagredone.png";
@@ -276,7 +282,7 @@ function App() {
 
         {/* Gallery Section */}
         <section id="gallery">
-          <h1 style={{ marginLeft: "2rem" }} className="gallery-title">
+          <h1 className="gallery-title">
             {language === 'english' ? '✐ Gallery' : '✐ ギャラリー'}
           </h1>
           <div className="gallery-container">
@@ -329,6 +335,38 @@ function App() {
               <img src={spacecraft} alt="Art" className="cropped-image" />
               <span class="caption">
               {language === 'english' ? 'Discovery Space Shuttle' : 'ディスカバリー宇宙シャトル'}
+              </span>
+            </div>
+          </div>
+
+          <div className="gallery-container">
+            <div className="boxlong">
+              <img src={oilmonet} alt="Art" className="cropped-image" />
+              <span class="caption">
+              {language === 'english' ? 'Woman with Parasol (Oil)' : 'モネ'}
+              </span>
+            </div>
+          
+            <div className="boxlong">
+              <img src={oilwaves} alt="Art" className="cropped-image" />
+              <span class="caption">
+              {language === 'english' ? 'Waves' : '波'}
+              </span>
+            </div>
+            
+          </div>
+
+          <div className="gallery-container">
+          <div className="boxlong">
+              <img src={oilspaceshuttle} alt="Art" className="cropped-image" />
+              <span class="caption">
+              {language === 'english' ? 'Discovery Space Shuttle' : 'ディスカバリー宇宙シャトル'}
+              </span>
+            </div>
+            <div className="boxlong">
+              <img src={watercolorvenice} alt="Art" className="cropped-image" />
+              <span class="caption">
+              {language === 'english' ? 'Watercolor Venice' : 'ヴェニス'}
               </span>
             </div>
           </div>

@@ -58,7 +58,7 @@ p {
     font-family: "Inconsolata", Times, serif;
     /* font-size: 1.5em; */
     font-size: 2vw;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 b,
@@ -137,6 +137,12 @@ a[href^="#"] {
   
  } */
 
+ .aboutmewordcontain {
+  margin-top: 6rem;
+  margin-left:3rem;
+  margin-bottom: -3rem;
+}
+
 .about-left-paragraph {
   /* flex: 1; */
   /* padding: 1rem; */
@@ -167,21 +173,24 @@ a[href^="#"] {
 .skill-box {
   margin-left: 1rem;
   margin-right: 1rem;
-  padding-top:1rem;
+
   /* font-size: 4vw; */
   text-align: center;
+  
 }
 
 .skill-title {
   text-align: center;
   font-size: 6vw;
-  color:rgb(55, 88, 255)
+  color:white;
 }
 
 .borderstyle {
-  color:rgb(55, 88, 255);
+  color: #344864;
   border-radius: 10px;
-  border: 3px solid rgb(55, 88, 255);
+  background-color: white;
+  border: 3px solid white;
+  box-shadow: 0 4px 10px #08153bab;
   padding: 0.2rem;
   margin: 0.3rem;
   font-size: 3vw;
