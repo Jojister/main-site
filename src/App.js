@@ -1,7 +1,7 @@
 //Imports
 import React, { useEffect } from "react";
-import GalleryPage from './Gallery';
-import Spline from '@splinetool/react-spline';
+// import GalleryPage from './Gallery';
+// import Spline from '@splinetool/react-spline';
 
 //NPM Imports
 import LocomotiveScroll from "locomotive-scroll";
