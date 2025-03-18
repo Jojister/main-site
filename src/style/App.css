@@ -9,9 +9,10 @@ html {
   --cursor-color: white;
 }
 
-body {
+html body {
   overflow-x: hidden;
-  background: linear-gradient(-45deg, #a89a87, #afcf7e, #99bdff, #87a890);
+  background: linear-gradient(-45deg, #b98c51, #1f311f, #1e2e4e, #527b5c);
+  background-size: 400% 400%; /* Add this line */
   animation: gradient 15s ease infinite;
 }
 
@@ -20,17 +21,107 @@ body {
       background-position: 0% 50%;
     }
     50% {
-      background-position: 100% 50%;
+      background-position: 0% 100%;
     }
     100% {
       background-position: 0% 50%;
     }
 }
 
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Blob Container */
+.blob-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1; /* Ensure blobs are behind other content */
+}
+
+/* Blob Container */
+.blob-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1; /* Ensure blobs are behind other content */
+}
+
+/* Blob Styles */
+.blob {
+  position: absolute;
+  width: 450px; /* Increased size */
+  height: 600px; /* Increased size */
+  border-radius: 50%;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  filter: blur(90px);
+}
+
+.blob1 {
+  background: radial-gradient(circle at 50% 50%, #ff3300, #33ccff);
+  animation-name: move1;
+  animation-duration: 20s; /* Unique duration for blob1 */
+}
+
+.blob2 {
+  background: radial-gradient(circle at 50% 50%, #cc00ff, #ffff33);
+  animation-name: move2;
+  animation-duration: 25s; /* Unique duration for blob2 */
+}
+
+.blob3 {
+  background: radial-gradient(circle at 50% 50%, #00ff99, #ff0066);
+  animation-name: move3;
+  animation-duration: 30s; /* Unique duration for blob3 */
+}
+
+/* Blob Animations */
+@keyframes move1 {
+  0% { transform: translate(-20vw, 0vh) rotate(0deg); }
+  25% { transform: translate(0vw, -10vh) rotate(90deg); }
+  50% { transform: translate(20vw, 10vh) rotate(180deg); }
+  75% { transform: translate(40vw, -20vh) rotate(270deg); }
+  100% { transform: translate(-20vw, 0vh) rotate(360deg); } /* Loop back to start */
+}
+
+@keyframes move2 {
+  0% { transform: translate(80vw, 0vh) rotate(0deg); }
+  25% { transform: translate(60vw, 20vh) rotate(90deg); }
+  50% { transform: translate(40vw, -10vh) rotate(180deg); }
+  75% { transform: translate(20vw, 10vh) rotate(270deg); }
+  100% { transform: translate(80vw, 0vh) rotate(360deg); } /* Loop back to start */
+}
+
+@keyframes move3 {
+  0% { transform: translate(40vw, 20vh) rotate(0deg); }
+  25% { transform: translate(60vw, -10vh) rotate(90deg); }
+  50% { transform: translate(80vw, 10vh) rotate(180deg); }
+  75% { transform: translate(100vw, -20vh) rotate(270deg); }
+  100% { transform: translate(40vw, 20vh) rotate(360deg); } /* Loop back to start */
+}
+
+/* Other styles... */
+
+
 nav {
   font-size: 1.6vw;
-  background-color: #344864;
-  color: white;
+  background-color: #f1f8f7;
+  color: rgb(0, 0, 0);
   padding: 0.8rem;
   margin-left: 2rem;
   margin-right: 2rem;
@@ -38,7 +129,9 @@ nav {
   border-radius: 10px;
   /* border-style: double; */
   border-color: #c0c0c0;
-  box-shadow: 0px 0px 16px 8px #08153bab;
+  box-shadow: 0px 0px 16px 0px #ece7dfab;
+  position: relative; /* Ensure the z-index works */
+  z-index: 1000; /* Set a high z-index value */
 }
 
 
@@ -46,7 +139,7 @@ h1 {
     color: rgb(255, 255, 255);
     font-family: "Playfair Display", Times, serif;
     font-weight: 100;
-    font-size: 8vw;
+    font-size: 8.5vw;
     margin-bottom: 0;
     margin-top: 9rem;
 }
@@ -64,6 +157,7 @@ a,
 button {
   font-family: "Inconsolata", Times, serif;
   font-weight: 600;
+  
   /* font-size: */
   /* text-align: right; */
 }
@@ -73,7 +167,7 @@ button {
     /* text-align: right; */
     background-color:#34312e00;
     border-radius: 10px;
-    color: white;
+    color: rgb(16, 10, 10);
     font-size: 1.3vw;
 }
 
@@ -84,7 +178,7 @@ button {
 }
 
 a[href^="#"] {
-  color: white;
+  color: rgb(0, 0, 0);
   text-decoration: none;
   padding-left: 6vw;
   text-align: right;
@@ -92,6 +186,7 @@ a[href^="#"] {
 
 .headingtop {
   margin-bottom: 0;
+  animation: slideDown 2s ease-out;
 }
   
 .paragraphtop {
@@ -112,7 +207,7 @@ a[href^="#"] {
 
 .about-section {
     margin-top: 12rem;
-    margin-bottom: 7rem;
+    /* margin-bottom: 7rem; */
     padding-bottom: 7rem;
     background-color: #ecdeca;
 }
@@ -145,21 +240,36 @@ a[href^="#"] {
   color: rgb(18, 121, 255);
 }
 
-.carousel-container {
+/* Vertical Carousel Styles */
+.vertical-carousel {
+  position: relative;
+  width: 30%; /* Adjust the width as needed */
+  height: 600px; /* Adjust the height as needed */
   overflow: hidden;
-  width: 24rem;
-  height: 32rem;
-  border-radius: 10px;
-  padding-right: 8rem;
-  padding-top: 4rem;
+  padding-right:4rem;
+  border-radius: 20px;
 }
 
 .carousel-track {
-  transition: transform 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  animation: scroll 40s linear infinite;
 }
 
 .carousel-track img {
+  width: 100%; /* Adjust the width as needed */
+  height: auto;
   border-radius: 10px;
+  margin-bottom: 10px; /* Space between images */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
 }
 
 .skill-box {
@@ -202,7 +312,244 @@ a[href^="#"] {
   padding-top: 1rem;
 }
 
+/**/
+/* General Styles */
+* {
+  box-sizing: border-box;
+}
 
+.container {
+  width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  padding-top:4rem;
+  padding-right:4rem;
+  padding-left:4rem;
+  justify-content: space-between;
+}
+
+button:focus {
+  outline: none;
+}
+
+.deck {
+  margin: 15px;
+  width: 70%;
+  height: 600px;
+  position: relative;
+  perspective: 1000px;
+  font-family: Verdana;
+  border-radius: 10px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s linear;
+  border-radius: 10px;
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: whitesmoke;
+  border-radius: 10px;
+}
+
+.back {
+  overflow: hidden;
+  z-index: -1;
+  display: block;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  background-color: #deebff;
+  
+}
+
+/* Ensure consistent styles for the back face */
+.back.face {
+  color:#121e34; /* Set text color to black */
+  font-family: "Playfair Display", Times, serif; /* Use the same font as the front */
+}
+
+.back.face h2 {
+  font-size: 3vw; /* Make the "Skills" heading a bit bigger */
+  text-align: center;
+  margin: 1rem 0;
+  color:#121e34;
+}
+
+.back.face ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.back.face ul li {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid black; /* Black border for the oval outline */
+  border-radius: 50px; /* Oval shape */
+  color: black;
+  font-size: 1.2vw; /* Adjust font size as needed */
+  font-family: "Inconsolata", Times, serif; /* Use the same font as the front */
+}
+
+.imageback {
+  padding: 2rem;
+  z-index: -1;
+  background-size: cover; /* Ensure the image covers the container */
+  display: block;
+  width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain the aspect ratio */
+  border-radius: 10px; /* Optional: Add border-radius if needed */
+}
+
+
+
+.back:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: 100% 100%;
+  /* background: url('https://i.imgur.com/W3tra4F.gif'); */
+  
+  color:#121e34;
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  transition: transform 0.5s linear;
+}
+
+.front {
+  /* background-image: url('https://i.imgur.com/W3tra4F.gif'); */
+  background-color: #121e34;
+  z-index: 1;
+  box-shadow: 5px 5px 5px #aaa;
+}
+
+.back {
+  box-shadow: 0 0 0 #aaa;
+}
+
+.deck:hover .card {
+  transform: rotateY(180deg);
+}
+
+.bottext {
+  position: absolute;
+  color:#121e34;
+  width: 100%;
+  height: 100px;
+  bottom: 0;
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+  padding: 10px;
+}
+
+.bottext h2 {
+  margin: 0;
+}
+
+.bottext h3 {
+  margin: 10px 0;
+}
+
+.rad-button {
+  border: 2px solid gray;
+  color: gray;
+  width: 90px;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 110px;
+  transition: all 0.5s linear;
+}
+
+.rad-button:hover {
+  color: gray;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.front h2, .front h3 {
+  text-align: center;
+  color: whitesmoke;
+}
+
+.back h2 {
+  margin: 0;
+  border-radius: 10px 10px 0 0;
+  padding: 10px;
+  text-align: center;
+  color: whitesmoke;
+}
+
+.back ul {
+  text-align: center;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+}
+
+.back ul li {
+  margin-top: 15px;
+  color: whitesmoke;
+}
+
+/* Remove the flip effect on hover for the specific card */
+.no-flip:hover .card {
+  transform: none; /* Prevent the card from flipping */
+}
+
+/* Ensure the card does not flip on hover */
+.no-flip .card {
+  transform: none; /* Ensure the card does not flip */
+}
+
+.botprice {
+  position: absolute;
+  bottom: 30px;
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+  width: 100%;
+  padding: 15px;
+  color: whitesmoke;
+}
+
+.botprice h3 {
+  margin: 0px;
+}
+
+.return {
+  position: absolute;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: gray;
+  cursor: pointer;
+  padding: 5px;
+  bottom: 0;
+  border-radius: 0 0 10px 10px;
+  background-color: darken(whitesmoke, 10%);
+  font-size: 18px;
+}
+
+.return:focus {
+  outline: none;
+}
 
 /* Gallery Styles */
 
@@ -313,38 +660,44 @@ a[href^="#"] {
 .project {
   
   background-color: #3b445a;
-  margin-top: 14rem;
+  /* margin-top: 8rem; */
   margin-bottom: 12rem;
-  
+  /* margin-top: 4rem; */
+  /* padding-top:-4rem; */
   padding-bottom: 12rem;
 }
 
 .project-style {
   /* width: auto; */
   /* max-width: none; */
-  
+  padding-bottom: 4rem;
   overflow-x: scroll !important;
 
 }
 
 .project-box {
-  margin-left: 7rem;
+  /* margin-left: 7rem; */
   padding-top: 1rem;
-  margin-bottom: -4rem;
+  margin-bottom: 2rem;
   /* margin-bottom: 100px; */
 }
 
-.astrowave {
-  width: fit-content;
-  display: flex;
-  flex-direction: row;
-  margin-right: 4rem;
+.astrow {
+  width: 75%; /* Adjust the width as needed */
+  height: auto; /* Maintain the aspect ratio */
+  padding-bottom: 0; /* Remove the invalid padding */
 }
 
 .project-title {
   /* font-size: 4rem; */
-  font-family: "Playfair Display", Times, serif;
-  font-size: 8vw;
+  /* font-family: "Playfair Display", Times, serif; */
+  font-family: "Roboto", Times, serif;
+  transform: scaleY(1.4);
+  font-size: 18vw;
+  text-align: center;
+  margin-bottom: 4rem;
+  margin-top: 6rem;
+  
 }
 
 
@@ -372,7 +725,8 @@ a[href^="#"] {
 }
 
 .projecttext {
-  margin: 1rem;
+  margin: 2rem;
+  font-size: 1.4vw;
 }
 
 
@@ -393,8 +747,8 @@ a[href^="#"] {
 }
 
 .cropped-image.astrowave {
-  /* margin-bottom: 1rem; */
-  padding-left: 1rem;
+  margin-left: 2rem;
+  /* padding-left: 2rem; */
   /* border-radius: 10px; */
   /* margin-right: 6rem; */
   
@@ -408,6 +762,7 @@ a[href^="#"] {
   font-size: 8vw;
   margin-bottom: -1rem;
   margin-top: -1rem;
+  margin-left: 2rem;
 }
 
 a {
@@ -438,9 +793,9 @@ a {
 }
 
 /* Contact Section */
-/* .contact-section {
-  /* background-color: #000000; 
-} */
+.contact-section {
+  padding-top: 4rem;
+}
 
 .contact-style {
   text-align: center;
