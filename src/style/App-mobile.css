@@ -106,7 +106,7 @@
 
   /* About Section */
   .about-section {
-    margin-top: 9rem;
+    margin-top: 2rem;
     margin-bottom: 2rem; /* Reduced margin-bottom */
     padding-bottom: 2rem; /* Reduced padding-bottom */
     background-color: #ecdeca;
@@ -117,7 +117,7 @@
     font-family: "Playfair Display", Times, serif;
     font-weight: 800;
     font-size: 14vw;
-    padding-top: -2rem;
+    /* padding-top: -4rem; */
     color: rgb(55, 88, 255);
   }
 
