@@ -1,0 +1,262 @@
+{
+  "prints": [
+    {
+      "id": "print-001",
+      "title": "Woman with Parasol",
+      "titleJp": "日傘をさす女",
+      "description": "Oil painting reproduction inspired by Monet's impressionist masterpiece",
+      "descriptionJp": "モネの印象派の名作にインスパイアされた油絵複製",
+      "image": "oilwomanwithumbrella",
+      "category": "oil",
+      "categoryLabel": "Oil Painting",
+      "categoryLabelJp": "油絵",
+      "sizes": [
+        { "size": "8x10", "price": 25 },
+        { "size": "11x14", "price": 45 },
+        { "size": "16x20", "price": 75 },
+        { "size": "24x30", "price": 120 }
+      ],
+      "featured": true
+    },
+    {
+      "id": "print-002",
+      "title": "Waves",
+      "titleJp": "波",
+      "description": "Original oil painting capturing the power and movement of ocean waves",
+      "descriptionJp": "海の波の力強さと動きを捉えたオリジナル油絵",
+      "image": "oilwaves",
+      "category": "oil",
+      "categoryLabel": "Oil Painting",
+      "categoryLabelJp": "油絵",
+      "sizes": [
+        { "size": "8x10", "price": 30 },
+        { "size": "11x14", "price": 50 },
+        { "size": "16x20", "price": 85 },
+        { "size": "24x30", "price": 140 }
+      ],
+      "featured": true
+    },
+    {
+      "id": "print-003",
+      "title": "Discovery Space Shuttle",
+      "titleJp": "ディスカバリー宇宙シャトル",
+      "description": "Oil painting of the iconic Discovery space shuttle",
+      "descriptionJp": "象徴的なディスカバリー宇宙シャトルの油絵",
+      "image": "oilspaceshuttle",
+      "category": "oil",
+      "categoryLabel": "Oil Painting",
+      "categoryLabelJp": "油絵",
+      "sizes": [
+        { "size": "8x10", "price": 30 },
+        { "size": "11x14", "price": 50 },
+        { "size": "16x20", "price": 85 }
+      ],
+      "featured": false
+    },
+    {
+      "id": "print-004",
+      "title": "Watercolor Venice",
+      "titleJp": "ヴェニス水彩画",
+      "description": "Delicate watercolor capturing the romantic canals of Venice",
+      "descriptionJp": "ヴェニスのロマンチックな運河を描いた繊細な水彩画",
+      "image": "watercolorvenice",
+      "category": "watercolor",
+      "categoryLabel": "Watercolor",
+      "categoryLabelJp": "水彩画",
+      "sizes": [
+        { "size": "8x10", "price": 20 },
+        { "size": "11x14", "price": 35 },
+        { "size": "16x20", "price": 60 }
+      ],
+      "featured": true
+    },
+    {
+      "id": "print-010",
+      "title": "Stick Season & Blue Jay",
+      "titleJp": "枯れ枝の季節とアオカケス",
+      "description": "Watercolor painting of a blue jay perched on autumn branches, capturing the quiet beauty of late fall",
+      "descriptionJp": "秋の枝にとまるアオカケスの水彩画、晩秋の静かな美しさを表現",
+      "image": "stickseasonbluejay",
+      "category": "watercolor",
+      "categoryLabel": "Watercolor",
+      "categoryLabelJp": "水彩画",
+      "sizes": [
+        { "size": "8x10", "price": 25 },
+        { "size": "11x14", "price": 40 },
+        { "size": "16x20", "price": 65 }
+      ],
+      "featured": true
+    },
+    {
+      "id": "print-011",
+      "title": "French Bulldog",
+      "titleJp": "フレンチブルドッグ",
+      "description": "Detailed watercolor portrait of an adorable French Bulldog lounging in the grass",
+      "descriptionJp": "草の上でくつろぐ愛らしいフレンチブルドッグの詳細な水彩画ポートレート",
+      "image": "frenchiedog",
+      "category": "watercolor",
+      "categoryLabel": "Watercolor",
+      "categoryLabelJp": "水彩画",
+      "sizes": [
+        { "size": "8x10", "price": 30 },
+        { "size": "11x14", "price": 50 },
+        { "size": "16x20", "price": 80 }
+      ],
+      "featured": true
+    },
+    {
+      "id": "print-012",
+      "title": "Man with Bath",
+      "titleJp": "入浴する男",
+      "description": "Classical figure study watercolor inspired by Caillebotte, depicting intimate domestic scene",
+      "descriptionJp": "カイユボットにインスパイアされた古典的な人物画の水彩画、親密な家庭シーンを描写",
+      "image": "manwithbath",
+      "category": "watercolor",
+      "categoryLabel": "Watercolor",
+      "categoryLabelJp": "水彩画",
+      "sizes": [
+        { "size": "8x10", "price": 30 },
+        { "size": "11x14", "price": 50 },
+        { "size": "16x20", "price": 80 }
+      ],
+      "featured": false
+    },
+    {
+      "id": "print-005",
+      "title": "Yosemite at Night",
+      "titleJp": "夜のヨセミテ",
+      "description": "Long exposure photograph of Yosemite under the stars",
+      "descriptionJp": "星空の下のヨセミテの長時間露光写真",
+      "image": "dawncamp",
+      "category": "photography",
+      "categoryLabel": "Photography",
+      "categoryLabelJp": "写真",
+      "sizes": [
+        { "size": "8x10", "price": 20 },
+        { "size": "11x14", "price": 35 },
+        { "size": "16x20", "price": 55 },
+        { "size": "24x36", "price": 95 }
+      ],
+      "featured": false
+    },
+    {
+      "id": "print-006",
+      "title": "Kyoto Festival",
+      "titleJp": "祇園祭",
+      "description": "Vibrant capture of traditional Kyoto festival celebrations",
+      "descriptionJp": "伝統的な京都の祭りの活気ある一枚",
+      "image": "kyotofestival",
+      "category": "photography",
+      "categoryLabel": "Photography",
+      "categoryLabelJp": "写真",
+      "sizes": [
+        { "size": "8x10", "price": 20 },
+        { "size": "11x14", "price": 35 },
+        { "size": "16x20", "price": 55 }
+      ],
+      "featured": true
+    },
+    {
+      "id": "print-007",
+      "title": "Osaka",
+      "titleJp": "大阪",
+      "description": "Street photography capturing the energy of Osaka",
+      "descriptionJp": "大阪のエネルギーを捉えたストリート写真",
+      "image": "osaka",
+      "category": "photography",
+      "categoryLabel": "Photography",
+      "categoryLabelJp": "写真",
+      "sizes": [
+        { "size": "8x10", "price": 20 },
+        { "size": "11x14", "price": 35 },
+        { "size": "16x20", "price": 55 }
+      ],
+      "featured": false
+    },
+    {
+      "id": "print-008",
+      "title": "Lake Shikotsu",
+      "titleJp": "支笏湖",
+      "description": "Serene landscape of Lake Shikotsu in Hokkaido",
+      "descriptionJp": "北海道・支笏湖の静かな風景",
+      "image": "hokkaido",
+      "category": "photography",
+      "categoryLabel": "Photography",
+      "categoryLabelJp": "写真",
+      "sizes": [
+        { "size": "8x10", "price": 20 },
+        { "size": "11x14", "price": 35 },
+        { "size": "16x20", "price": 55 },
+        { "size": "24x36", "price": 95 }
+      ],
+      "featured": false
+    },
+    {
+      "id": "print-009",
+      "title": "Club Sign Up Poster",
+      "titleJp": "クラブ参加ポスター",
+      "description": "Original graphic design poster for Multimedia Art Club",
+      "descriptionJp": "マルチメディアアートクラブのオリジナルグラフィックデザインポスター",
+      "image": "multimediaflyerfinal",
+      "category": "poster",
+      "categoryLabel": "Poster",
+      "categoryLabelJp": "ポスター",
+      "sizes": [
+        { "size": "11x17", "price": 15 },
+        { "size": "18x24", "price": 30 }
+      ],
+      "featured": false
+    }
+  ],
+  "commissions": {
+    "types": [
+      {
+        "id": "commission-oil",
+        "title": "Oil Painting",
+        "titleJp": "油絵",
+        "description": "Custom oil painting on canvas",
+        "descriptionJp": "キャンバスにカスタム油絵",
+        "startingPrice": 200,
+        "timeline": "4-8 weeks",
+        "timelineJp": "4〜8週間"
+      },
+      {
+        "id": "commission-watercolor",
+        "title": "Watercolor",
+        "titleJp": "水彩画",
+        "description": "Custom watercolor painting",
+        "descriptionJp": "カスタム水彩画",
+        "startingPrice": 100,
+        "timeline": "2-4 weeks",
+        "timelineJp": "2〜4週間"
+      },
+      {
+        "id": "commission-digital",
+        "title": "Digital Art",
+        "titleJp": "デジタルアート",
+        "description": "Custom digital illustration or design",
+        "descriptionJp": "カスタムデジタルイラストまたはデザイン",
+        "startingPrice": 75,
+        "timeline": "1-2 weeks",
+        "timelineJp": "1〜2週間"
+      },
+      {
+        "id": "commission-poster",
+        "title": "Poster Design",
+        "titleJp": "ポスターデザイン",
+        "description": "Custom graphic design poster",
+        "descriptionJp": "カスタムグラフィックデザインポスター",
+        "startingPrice": 50,
+        "timeline": "1-2 weeks",
+        "timelineJp": "1〜2週間"
+      }
+    ]
+  },
+  "categories": [
+    { "id": "all", "label": "All", "labelJp": "すべて" },
+    { "id": "oil", "label": "Oil Painting", "labelJp": "油絵" },
+    { "id": "watercolor", "label": "Watercolor", "labelJp": "水彩画" },
+    { "id": "photography", "label": "Photography", "labelJp": "写真" },
+    { "id": "poster", "label": "Poster", "labelJp": "ポスター" }
+  ]
+}
