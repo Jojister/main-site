@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useCart } from '../scripts/CartContext';
+import { useCart } from '../context/CartContext';
 import { useLanguage } from '../context/LanguageProvider';
 
 const Cart = () => {
@@ -8,7 +8,6 @@ const Cart = () => {
   const {
     cartItems,
     cartTotal,
-    cartCount,
     isCartOpen,
     removeFromCart,
     updateQuantity,
@@ -22,7 +21,7 @@ const Cart = () => {
     setIsLoading(true);
     
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/create-checkout-session`, {
+      const response = await fetch('/.netlify/functions/create-checkout-session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
