@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useCart } from '../context/CartContext';
+import { useCart } from '../scripts/CartContext';
 import { useLanguage } from '../context/LanguageProvider';
 
 const Cart = () => {
