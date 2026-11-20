@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { useCart } from '../scripts/CartContext';
-import { useLanguage } from '../context/LanguageProvider';
+import { useCart } from '../context/CartContext';
+import { useLanguage } from '../context/LanguageContext';
+import imageMap from '../utils/imageMap';
 
 const Cart = () => {
-  const { language } = useLanguage();
+  const { t } = useLanguage();
   const [isLoading, setIsLoading] = useState(false);
   const {
     cartItems,
@@ -28,11 +29,9 @@ const Cart = () => {
         },
         body: JSON.stringify({
           items: cartItems.map(item => ({
-            title: item.title,
+            id: item.id,
             size: item.size,
-            price: item.price,
             quantity: item.quantity,
-            image: item.image, // Note: needs to be absolute URL in production
           })),
         }),
       });
@@ -47,9 +46,7 @@ const Cart = () => {
       window.location.href = url;
     } catch (error) {
       console.error('Checkout error:', error);
-      alert(language === 'english' 
-        ? 'Error processing checkout. Please try again.' 
-        : 'チェックアウトエラー。もう一度お試しください。'
+      alert(t('Error processing checkout. Please try again.', 'チェックアウトエラー。もう一度お試しください。')
       );
     } finally {
       setIsLoading(false);
@@ -67,7 +64,7 @@ const Cart = () => {
       {/* Cart Sidebar */}
       <div className={`cart-sidebar ${isCartOpen ? 'open' : ''}`}>
         <div className="cart-header">
-          <h2>{language === 'english' ? 'Your Cart' : 'カート'}</h2>
+          <h2>{t('Your Cart', 'カート')}</h2>
           <button 
             className="cart-close"
             onClick={() => setIsCartOpen(false)}
@@ -80,16 +77,16 @@ const Cart = () => {
         {cartItems.length === 0 ? (
           <div className="cart-empty">
             <span className="cart-empty-icon">🛒</span>
-            <p>{language === 'english' ? 'Your cart is empty' : 'カートは空です'}</p>
+            <p>{t('Your cart is empty', 'カートは空です')}</p>
           </div>
         ) : (
           <>
             <div className="cart-items">
               {cartItems.map(item => (
                 <div key={item.cartItemId} className="cart-item">
-                  <img src={item.image} alt={item.title} className="cart-item-image" />
+                  <img src={imageMap[item.image]} alt={item.title} className="cart-item-image" />
                   <div className="cart-item-details">
-                    <h4>{language === 'english' ? item.title : item.titleJp}</h4>
+                    <h4>{t(item.title, item.titleJp)}</h4>
                     <p className="cart-item-size">{item.size}</p>
                     <p className="cart-item-price">${item.price}</p>
                     <div className="cart-item-quantity">
@@ -111,7 +108,7 @@ const Cart = () => {
 
             <div className="cart-footer">
               <div className="cart-total">
-                <span>{language === 'english' ? 'Total' : '合計'}</span>
+                <span>{t('Total', '合計')}</span>
                 <span>${cartTotal.toFixed(2)}</span>
               </div>
               <button 
@@ -120,12 +117,12 @@ const Cart = () => {
                 disabled={isLoading}
               >
                 {isLoading 
-                  ? (language === 'english' ? 'Processing...' : '処理中...') 
-                  : (language === 'english' ? 'Checkout' : 'チェックアウト')
+                  ? (t('Processing...', '処理中...')) 
+                  : (t('Checkout', 'チェックアウト'))
                 }
               </button>
               <button className="cart-clear-btn" onClick={clearCart}>
-                {language === 'english' ? 'Clear Cart' : 'カートを空にする'}
+                {t('Clear Cart', 'カートを空にする')}
               </button>
             </div>
           </>

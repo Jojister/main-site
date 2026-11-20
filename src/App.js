@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { LanguageProvider } from './context/LanguageProvider';
-import { CartProvider } from './scripts/CartContext';
+import { LanguageProvider } from './context/LanguageContext';
+import { CartProvider } from './context/CartContext';
 
 // Components
 import Nav from './components/Nav';
@@ -14,6 +14,7 @@ import Portfolio from './pages/Portfolio';
 import Shop from './pages/Shop';
 import Success from './pages/Success';
 import Footer from './components/Footer';
+import ScrollToHash from './components/ScrollToHash';
 
 // Styles
 import './style/App.css';
@@ -35,6 +36,7 @@ function App() {
     <LanguageProvider>
       <CartProvider>
         <Router>
+          <ScrollToHash />
           <div className="App">
             <Nav />
             <Cart />

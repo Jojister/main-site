@@ -1,31 +1,63 @@
 // netlify/functions/create-checkout-session.js
+//
+// The client sends only product IDs, sizes and quantities. Titles and prices are
+// looked up here from products.json so the browser can't set its own price.
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const { prints } = require('../../src/data/products.json');
 
-exports.handler = async (event, context) => {
-  // Only allow POST
+const MAX_QUANTITY = 20;
+
+const jsonResponse = (statusCode, body) => ({
+  statusCode,
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(body),
+});
+
+const buildLineItem = ({ id, size, quantity }) => {
+  const product = prints.find((p) => p.id === id);
+  const variant = product?.sizes.find((s) => s.size === size);
+  const qty = Number(quantity);
+
+  if (!product || !variant || !Number.isInteger(qty) || qty < 1 || qty > MAX_QUANTITY) {
+    return null;
+  }
+
+  return {
+    price_data: {
+      currency: 'usd',
+      product_data: {
+        name: product.title,
+        description: `Size: ${variant.size}`,
+      },
+      unit_amount: Math.round(variant.price * 100),
+    },
+    quantity: qty,
+  };
+};
+
+exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') {
-    return {
-      statusCode: 405,
-      body: JSON.stringify({ error: 'Method not allowed' }),
-    };
+    return jsonResponse(405, { error: 'Method not allowed' });
+  }
+
+  let items;
+  try {
+    ({ items } = JSON.parse(event.body || '{}'));
+  } catch {
+    return jsonResponse(400, { error: 'Invalid request body' });
+  }
+
+  if (!Array.isArray(items) || items.length === 0) {
+    return jsonResponse(400, { error: 'Cart is empty' });
+  }
+
+  const lineItems = items.map(buildLineItem);
+  if (lineItems.some((item) => item === null)) {
+    return jsonResponse(400, { error: 'Cart contains an invalid item' });
   }
 
   try {
-    const { items } = JSON.parse(event.body);
-
-    const lineItems = items.map(item => ({
-      price_data: {
-        currency: 'usd',
-        product_data: {
-          name: item.title,
-          description: `Size: ${item.size}`,
-        },
-        unit_amount: Math.round(item.price * 100),
-      },
-      quantity: item.quantity,
-    }));
-
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: lineItems,
@@ -53,18 +85,9 @@ exports.handler = async (event, context) => {
       ],
     });
 
-    return {
-      statusCode: 200,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ url: session.url }),
-    };
+    return jsonResponse(200, { url: session.url });
   } catch (error) {
     console.error('Stripe error:', error);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: error.message }),
-    };
+    return jsonResponse(500, { error: 'Could not start checkout' });
   }
 };

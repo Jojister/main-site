@@ -1,14 +1,14 @@
 //Used in About Me
 import bahamas from "../images/bahamasgpa.jpg";
-import painting from "../images/IMG_9712 copy.jpg";
+import painting from "../images/about-painting.jpg";
 import polaroid from "../images/polaroid4-11.JPG";
 import cat from "../images/cat.JPG";
 import taiko from "../images/taiko.JPG";
 import windmill from "../images/windmill.JPG";
-import { useLanguage } from "../context/LanguageProvider";
+import { useLanguage } from "../context/LanguageContext";
 
 const About = () => {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   return (
     <section
       id="about"
@@ -17,7 +17,7 @@ const About = () => {
     >
       <div className="aboutmewordcontain">
         <span className="aboutmeword">
-          {language === "english" ? "About Me ✧" : "アバウト ✧"}
+          {t("About Me ✧", "アバウト ✧")}
         </span>
       </div>
       <div className="content-container" data-scroll-container>
@@ -49,28 +49,28 @@ const About = () => {
           <div className="carousel-track">
             <img
               src={bahamas}
-              alt={language === "english" ? "Younger self and Grandfather" : "幼い頃の自分と祖父"}
+              alt={t("Younger self and Grandfather", "幼い頃の自分と祖父")}
               className="cropped-image"
             />
-            <img src={painting} alt={language === "english" ? "Art" : "アート"} className="cropped-image" />
+            <img src={painting} alt={t("Art", "アート")} className="cropped-image" />
             <img
               src={polaroid}
-              alt={language === "english" ? "Polaroid Collage" : "ポラロイドコラージュ"}
+              alt={t("Polaroid Collage", "ポラロイドコラージュ")}
               className="cropped-image"
             />
             <img
               src={cat}
-              alt={language === "english" ? "Cat licking popsicle" : "アイスを舐める猫"}
+              alt={t("Cat licking popsicle", "アイスを舐める猫")}
               className="cropped-image"
             />
             <img
               src={taiko}
-              alt={language === "english" ? "Taiko no Tatsujin" : "太鼓の達人"}
+              alt={t("Taiko no Tatsujin", "太鼓の達人")}
               className="cropped-image"
             />
             <img
               src={windmill}
-              alt={language === "english" ? "Windmill with tulips" : "チューリップと風車"}
+              alt={t("Windmill with tulips", "チューリップと風車")}
               className="cropped-image"
             />
           </div>

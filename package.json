@@ -1,32 +1,18 @@
 {
-  "name": "test-site",
+  "name": "jojister-website",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@pixi/filter-kawase-blur": "^5.1.1",
-    "@splinetool/react-spline": "^4.0.0",
-    "@stripe/react-stripe-js": "^5.4.1",
-    "@stripe/stripe-js": "^8.5.3",
-    "@testing-library/user-event": "^13.5.0",
-    "debounce": "^2.0.0",
-    "hsl-to-hex": "^1.0.0",
-    "locomotive-scroll": "^4.1.4",
-    "next": "^15.2.3",
-    "pixi.js": "^8.0.4",
     "react": "^18.3.1",
-    "react-animated-cursor": "^2.11.2",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.9.6",
     "react-scripts": "^5.0.1",
-    "simplex-noise": "^4.0.1",
-    "stripe": "^20.0.0",
-    "web-vitals": "^2.1.4"
+    "stripe": "^20.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --watchAll=false"
   },
   "eslintConfig": {
     "extends": [
@@ -48,7 +34,17 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.2.0"
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.5.2"
+  },
+  "description": "Joji Araki's personal website, portfolio, and print shop",
+  "jest": {
+    "moduleNameMapper": {
+      "^react-router-dom$": "<rootDir>/node_modules/react-router-dom/dist/index.js",
+      "^react-router/dom$": "<rootDir>/node_modules/react-router/dist/development/dom-export.js",
+      "^react-router$": "<rootDir>/node_modules/react-router/dist/development/index.js"
+    }
   }
 }
