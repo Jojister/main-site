@@ -68,32 +68,6 @@
     "shortDescJp": "AIチャットボット付き学生ローン可視化アプリ。"
   },
   {
-    "id": "astrowave",
-    "name": "Astrowave",
-    "nameJp": "アストロウェーブ",
-    "image": "astrowave",
-    "role": "CEO & Founder",
-    "roleJp": "CEO・創業者",
-    "date": "2022 - 2023",
-    "dateJp": "2022年 - 2023年",
-    "problem": "Broken surfboards end up in landfills, contributing to environmental waste in coastal communities.",
-    "problemJp": "壊れたサーフボードが埋立地に捨てられ、沿岸地域の環境廃棄物に貢献していました。",
-    "solution": "Founded a renewable jewelry company that upcycles broken surfboards into unique accessories using D-Limonene solvent. Received and repaid investment from STIHL. Created handwoven bracelets with quality packaging.",
-    "solutionJp": "D-リモネン溶剤を使用して壊れたサーフボードをユニークなアクセサリーにアップサイクルする再生可能なジュエリー会社を設立。STIHLから投資を受け、返済完了。高品質パッケージの手編みブレスレットを制作。",
-    "skills": [
-      "Product Management",
-      "Pitching",
-      "Organic Chemistry",
-      "Excel",
-      "Business Development"
-    ],
-    "shortDesc": "Eco-friendly jewelry from recycled surfboards.",
-    "shortDescJp": "リサイクルサーフボードからのエコジュエリー。",
-    "link": "https://docs.google.com/presentation/d/1xCezcRiJelyxnovzaO_5F_CNAwmGXOmL6ayBbI7RzFM/edit?usp=sharing",
-    "linkText": "View STIHL Pitch",
-    "linkTextJp": "STIHLピッチを見る"
-  },
-  {
     "id": "mac",
     "name": "Multimedia Art Club",
     "nameJp": "マルチメディアアートクラブ",

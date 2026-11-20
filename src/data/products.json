@@ -190,22 +190,6 @@
         { "size": "24x36", "price": 95 }
       ],
       "featured": false
-    },
-    {
-      "id": "print-009",
-      "title": "Club Sign Up Poster",
-      "titleJp": "クラブ参加ポスター",
-      "description": "Original graphic design poster for Multimedia Art Club",
-      "descriptionJp": "マルチメディアアートクラブのオリジナルグラフィックデザインポスター",
-      "image": "multimediaflyerfinal",
-      "category": "poster",
-      "categoryLabel": "Poster",
-      "categoryLabelJp": "ポスター",
-      "sizes": [
-        { "size": "11x17", "price": 15 },
-        { "size": "18x24", "price": 30 }
-      ],
-      "featured": false
     }
   ],
   "commissions": {
@@ -256,7 +240,6 @@
     { "id": "all", "label": "All", "labelJp": "すべて" },
     { "id": "oil", "label": "Oil Painting", "labelJp": "油絵" },
     { "id": "watercolor", "label": "Watercolor", "labelJp": "水彩画" },
-    { "id": "photography", "label": "Photography", "labelJp": "写真" },
-    { "id": "poster", "label": "Poster", "labelJp": "ポスター" }
+    { "id": "photography", "label": "Photography", "labelJp": "写真" }
   ]
 }

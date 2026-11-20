@@ -88,6 +88,25 @@ nav {
   gap: 0.75rem;
 }
 
+/* Menu button only appears on small screens */
+nav .nav-menu-btn {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  color: var(--text-light);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+nav .nav-menu-btn:hover {
+  transform: none;
+  box-shadow: none;
+  background: var(--glass-bg);
+}
+
 nav a[href^="#"], nav a[href^="/"], nav a {
   color: var(--text-muted);
   text-decoration: none;
@@ -1094,7 +1113,7 @@ footer {
   margin-bottom: 2rem;
 }
 
-.size-selector label {
+.size-selector-label {
   display: block;
   margin-bottom: 0.75rem;
   color: var(--text-muted);
@@ -1405,6 +1424,39 @@ footer {
 }
 
 /* ============================================
+   CLICKABLE CARDS
+   The title button stretches over the whole card,
+   so the card opens by mouse, Tab + Enter or Space.
+   ============================================ */
+.product-card,
+.project-card {
+  position: relative;
+}
+
+.card-open-btn {
+  all: unset;
+  cursor: pointer;
+}
+
+.card-open-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.product-card:has(.card-open-btn:focus-visible),
+.project-card:has(.card-open-btn:focus-visible),
+.portfolio-item:has(.card-open-btn:focus-visible) {
+  outline: 2px solid var(--primary-accent);
+  outline-offset: 4px;
+}
+
+.portfolio-item:focus-within .portfolio-item-overlay {
+  opacity: 1;
+}
+
+/* ============================================
    CART SIDEBAR
    ============================================ */
 .cart-overlay {
@@ -1435,11 +1487,14 @@ footer {
   display: flex;
   flex-direction: column;
   transform: translateX(100%);
-  transition: transform 0.4s var(--transition-smooth);
+  visibility: hidden;
+  transition: transform 0.4s var(--transition-smooth), visibility 0s linear 0.4s;
 }
 
 .cart-sidebar.open {
   transform: translateX(0);
+  visibility: visible;
+  transition: transform 0.4s var(--transition-smooth), visibility 0s;
 }
 
 .cart-header {
@@ -1665,22 +1720,38 @@ footer {
     padding: 0.75rem 1rem;
   }
   
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.25rem;
+  nav .nav-menu-btn {
+    display: inline-flex;
   }
-  
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 0.75rem 1rem 1rem;
+    background: var(--primary-dark);
+    border-bottom: 1px solid var(--glass-border);
+  }
+
   .nav-actions {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     flex-shrink: 0;
   }
-  
-  nav a[href^="#"], nav a[href^="/"], nav a {
-    font-size: 0.75rem;
-    padding: 0.4rem 0.6rem;
+
+  nav .nav-links a {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
   }
   
   nav button {
@@ -1788,24 +1859,7 @@ footer {
     padding: 0.5rem 0.75rem;
     gap: 0.5rem;
   }
-  
-  .nav-links {
-    order: 2;
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .nav-actions {
-    order: 1;
-    width: 100%;
-    justify-content: flex-end;
-  }
-  
-  nav a[href^="#"], nav a[href^="/"], nav a {
-    padding: 0.3rem 0.5rem;
-    font-size: 0.7rem;
-  }
-  
+
   nav button {
     padding: 0.35rem 0.7rem;
     font-size: 0.7rem;

@@ -3,11 +3,13 @@ import githubwhite from "../images/githubw.png";
 import projects from "../data/projects.json";
 import imageMap from "../utils/imageMap";
 import { useLanguage } from "../context/LanguageContext";
+import useDialog from "../hooks/useDialog";
 
 const Project = () => {
   const { t } = useLanguage();
   const [selected, setSelected] = useState(null);
   const close = () => setSelected(null);
+  const dialogRef = useDialog(Boolean(selected), close);
 
   return (
     <section id="projects" className="project">
@@ -18,13 +20,17 @@ const Project = () => {
       <div className="project-style">
         <div className="project-grid">
           {projects.map((project) => (
-            <div key={project.id} className="project-card" onClick={() => setSelected(project)}>
+            <div key={project.id} className="project-card">
               <div className="project-card-image">
                 <img src={imageMap[project.image]} alt={project.name} />
               </div>
               <div className="project-card-content">
                 <span className="project-card-date">{t(project.date, project.dateJp)}</span>
-                <h3 className="project-card-title">{t(project.name, project.nameJp)}</h3>
+                <h3 className="project-card-title">
+                  <button type="button" className="card-open-btn" onClick={() => setSelected(project)}>
+                    {t(project.name, project.nameJp)}
+                  </button>
+                </h3>
                 <p className="project-card-desc">{t(project.shortDesc, project.shortDescJp)}</p>
                 <div className="project-card-skills">
                   {project.skills.slice(0, 3).map((skill) => (
@@ -56,15 +62,23 @@ const Project = () => {
 
       {selected && (
         <div className="project-modal-overlay" onClick={close}>
-          <div className="project-modal" onClick={(e) => e.stopPropagation()}>
-            <button className="project-modal-close" onClick={close} aria-label="Close">
+          <div
+            ref={dialogRef}
+            className="project-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="project-modal-title"
+            tabIndex={-1}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button type="button" className="project-modal-close" onClick={close} aria-label={t("Close", "閉じる")}>
               ✕
             </button>
 
             <div className="project-modal-header">
               <img src={imageMap[selected.image]} alt={selected.name} className="project-modal-image" />
               <div className="project-modal-title-section">
-                <h2>{t(selected.name, selected.nameJp)}</h2>
+                <h2 id="project-modal-title">{t(selected.name, selected.nameJp)}</h2>
                 <span className="project-modal-role">{t(selected.role, selected.roleJp)}</span>
                 <span className="project-modal-date">{t(selected.date, selected.dateJp)}</span>
               </div>
