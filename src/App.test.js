@@ -1,8 +1,15 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+beforeAll(() => {
+  window.scrollTo = jest.fn();
+  Element.prototype.scrollIntoView = jest.fn();
+});
+
+test('renders the navigation and switches language', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: 'Shop' })).toBeInTheDocument();
+
+  fireEvent.click(screen.getByRole('button', { name: '日本語' }));
+  expect(screen.getByRole('link', { name: 'ショップ' })).toBeInTheDocument();
 });

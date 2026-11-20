@@ -1,11 +1,11 @@
-import { useLanguage } from "../context/LanguageProvider";
+import { useLanguage } from "../context/LanguageContext";
 
 const Contact = () => {
-  const { language } = useLanguage();
+  const { t } = useLanguage();
   return (
     <section id="contact" className="contact-section">
       <h2 className="contact-style">
-        {language === "english" ? "CONTACT ME" : "コンタクト"}
+        {t("CONTACT ME", "コンタクト")}
       </h2>
       <div className="centered-word-container">
         <a
@@ -14,7 +14,7 @@ const Contact = () => {
           rel="noopener noreferrer"
           className="centered-word"
         >
-          {language === "english" ? "Email" : "メール"}
+          {t("Email", "メール")}
         </a>
         <a
           href="https://www.linkedin.com/in/joji-araki/"
@@ -30,7 +30,7 @@ const Contact = () => {
           rel="noopener noreferrer"
           className="centered-word"
         >
-          {language === "english" ? "Instagram" : "インスタ"}
+          {t("Instagram", "インスタ")}
         </a>
         <a
           href="https://www.instagram.com/jarakinn/"
@@ -38,7 +38,7 @@ const Contact = () => {
           rel="noopener noreferrer"
           className="centered-word"
         >
-          {language === "english" ? "Art" : "作品"}
+          {t("Art", "作品")}
         </a>
       </div>
     </section>

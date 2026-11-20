@@ -2,41 +2,28 @@
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-exports.handler = async (event, context) => {
-  // Only allow GET
+const jsonResponse = (statusCode, body) => ({
+  statusCode,
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(body),
+});
+
+exports.handler = async (event) => {
   if (event.httpMethod !== 'GET') {
-    return {
-      statusCode: 405,
-      body: JSON.stringify({ error: 'Method not allowed' }),
-    };
+    return jsonResponse(405, { error: 'Method not allowed' });
   }
 
   const sessionId = event.queryStringParameters?.sessionId;
-
-  if (!sessionId) {
-    return {
-      statusCode: 400,
-      body: JSON.stringify({ error: 'Session ID required' }),
-    };
+  if (!sessionId || !sessionId.startsWith('cs_')) {
+    return jsonResponse(400, { error: 'Session ID required' });
   }
 
   try {
     const session = await stripe.checkout.sessions.retrieve(sessionId);
-    
-    return {
-      statusCode: 200,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        status: session.payment_status,
-        customerEmail: session.customer_details?.email,
-      }),
-    };
+    // Only the payment status is returned; customer details stay server-side.
+    return jsonResponse(200, { status: session.payment_status });
   } catch (error) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: error.message }),
-    };
+    console.error('Stripe error:', error);
+    return jsonResponse(500, { error: 'Could not verify session' });
   }
 };

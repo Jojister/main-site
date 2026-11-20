@@ -1,4 +1,4 @@
-import { useLanguage } from "../context/LanguageProvider";
+import { useLanguage } from "../context/LanguageContext";
 import heroImage from "../images/bluemountains.jpeg"; // Add your photo here
 
 function Home() {
