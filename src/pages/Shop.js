@@ -65,7 +65,7 @@ const Shop = () => {
         {filteredPrints.map(product => (
           <div key={product.id} className="product-card">
             <div className="product-image-wrapper">
-              <img src={imageMap[product.image]} alt={product.title} />
+              <img src={imageMap[product.image]} alt={product.title} loading="lazy" decoding="async" />
               {product.featured && (
                 <span className="product-badge">
                   {t('Featured', '注目')}

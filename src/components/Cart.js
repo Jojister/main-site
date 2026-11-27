@@ -87,7 +87,11 @@ const Cart = () => {
 
         {cartItems.length === 0 ? (
           <div className="cart-empty">
-            <span className="cart-empty-icon">🛒</span>
+            <svg className="cart-empty-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+              <circle cx="9" cy="21" r="1" />
+              <circle cx="20" cy="21" r="1" />
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+            </svg>
             <p>{t('Your cart is empty', 'カートは空です')}</p>
           </div>
         ) : (
@@ -95,7 +99,7 @@ const Cart = () => {
             <div className="cart-items">
               {cartItems.map(item => (
                 <div key={item.cartItemId} className="cart-item">
-                  <img src={imageMap[item.image]} alt={item.title} className="cart-item-image" />
+                  <img src={imageMap[item.image]} alt={item.title} className="cart-item-image" loading="lazy" decoding="async" />
                   <div className="cart-item-details">
                     <h4>{t(item.title, item.titleJp)}</h4>
                     <p className="cart-item-size">{item.size}</p>

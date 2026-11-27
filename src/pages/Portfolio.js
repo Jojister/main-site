@@ -48,7 +48,7 @@ const Portfolio = () => {
       <div className="portfolio-grid">
         {filteredPrints.map(item => (
           <div key={item.id} className="portfolio-item">
-            <img src={imageMap[item.image]} alt={item.title} />
+            <img src={imageMap[item.image]} alt={item.title} loading="lazy" decoding="async" />
             <div className="portfolio-item-overlay">
               <h3>
                 <button

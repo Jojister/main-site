@@ -13,16 +13,14 @@ const Project = () => {
 
   return (
     <section id="projects" className="project">
-      <div className="project-box">
-        <p className="project-title">{t("PROJECTS", "プロジェクト")}</p>
-      </div>
+      <h2 className="section-title">{t("Projects", "プロジェクト")}</h2>
 
       <div className="project-style">
         <div className="project-grid">
           {projects.map((project) => (
             <div key={project.id} className="project-card">
               <div className="project-card-image">
-                <img src={imageMap[project.image]} alt={project.name} />
+                <img src={imageMap[project.image]} alt={project.name} loading="lazy" decoding="async" />
               </div>
               <div className="project-card-content">
                 <span className="project-card-date">{t(project.date, project.dateJp)}</span>

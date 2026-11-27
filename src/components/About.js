@@ -15,22 +15,17 @@ const About = () => {
       className="bordered-section about-section"
       data-scroll-container
     >
-      <div className="aboutmewordcontain">
-        <span className="aboutmeword">
-          {t("About Me ✧", "アバウト ✧")}
-        </span>
-      </div>
+      <h2 className="section-title">{t("About me", "アバウト")}</h2>
       <div className="content-container" data-scroll-container>
-        <p className="about-left-paragraph">
-          <br /> <br />
+        <div className="about-left-paragraph">
           {language === "english" ? (
             <blockquote>
               Dabbling in many passions, you'll find me: painting (preferably
               oil), surfing, designing, practicing guitar, investing, and taking
               on Earth.
               <br /> <br />
-              My goal is to either work in the financial sector and or startup a
-              business. Come talk to me in Japanese or basic French!
+              My goal is to work in finance or start a business. Come talk to me
+              in Japanese or basic French!
               <br /> <br />
               #traveling <br /> #Sucker4Adobe <br /> #Fujifilm
             </blockquote>
@@ -43,32 +38,32 @@ const About = () => {
               #旅行 <br /> #アドビ愛好者 <br /> #フジフイルム
             </blockquote>
           )}
-        </p>
+        </div>
 
         <div className="vertical-carousel">
           <div className="carousel-track">
-            <img
+            <img loading="lazy" decoding="async"
               src={bahamas}
               alt={t("Younger self and Grandfather", "幼い頃の自分と祖父")}
               className="cropped-image"
             />
-            <img src={painting} alt={t("Art", "アート")} className="cropped-image" />
-            <img
+            <img loading="lazy" decoding="async" src={painting} alt={t("Art", "アート")} className="cropped-image" />
+            <img loading="lazy" decoding="async"
               src={polaroid}
               alt={t("Polaroid Collage", "ポラロイドコラージュ")}
               className="cropped-image"
             />
-            <img
+            <img loading="lazy" decoding="async"
               src={cat}
               alt={t("Cat licking popsicle", "アイスを舐める猫")}
               className="cropped-image"
             />
-            <img
+            <img loading="lazy" decoding="async"
               src={taiko}
               alt={t("Taiko no Tatsujin", "太鼓の達人")}
               className="cropped-image"
             />
-            <img
+            <img loading="lazy" decoding="async"
               src={windmill}
               alt={t("Windmill with tulips", "チューリップと風車")}
               className="cropped-image"

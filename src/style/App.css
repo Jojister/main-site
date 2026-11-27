@@ -49,13 +49,7 @@ body::before {
     radial-gradient(ellipse 80% 50% at 20% 40%, rgba(59, 130, 246, 0.15), transparent),
     radial-gradient(ellipse 60% 40% at 80% 60%, rgba(139, 92, 246, 0.12), transparent),
     radial-gradient(ellipse 50% 30% at 50% 80%, rgba(16, 185, 129, 0.08), transparent);
-  animation: gradientShift 20s ease infinite;
   z-index: -1;
-}
-
-@keyframes gradientShift {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.1); }
 }
 
 /* ============================================
@@ -251,22 +245,41 @@ blockquote {
 .paragraphtop {
   max-width: 600px;
   padding: 1.5rem 2rem;
-  background: var(--glass-bg);
+  background: rgba(10, 15, 26, 0.6);
   border: 1px solid var(--glass-border);
   border-radius: 20px;
-  backdrop-filter: blur(10px);
   animation: fadeInUp 1s 0.2s var(--transition-smooth) backwards;
-  text-align: center;
 }
 
 .paragraphtop p {
-  text-align: center;
   margin: 0;
+}
+
+/* 7: hero actions */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+  animation: fadeInUp 1s 0.4s var(--transition-smooth) backwards;
 }
 
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   SECTION HEADINGS (shared)
+   ============================================ */
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
 /* ============================================
@@ -277,26 +290,6 @@ blockquote {
   background: linear-gradient(180deg, transparent, rgba(236, 222, 202, 0.03), transparent);
 }
 
-.aboutmewordcontain {
-  margin-bottom: 0;
-  padding-left: 8rem;
-  padding-top: 5rem;
-  display: flex;
-  align-items: flex-start;
-  min-height: 500px;
-}
-
-.aboutmeword {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 600;
-  background: linear-gradient(135deg, #60a5fa, #a78bfa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  top: 150px;
-}
-
 .content-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -304,7 +297,6 @@ blockquote {
   max-width: 1200px;
   margin: 0 auto;
   align-items: center;
-  margin-top: -400px;
 }
 
 .about-left-paragraph {
@@ -346,22 +338,6 @@ blockquote {
 .project {
   padding: 6rem 2rem;
   background: linear-gradient(180deg, rgba(59, 68, 90, 0.1), rgba(59, 68, 90, 0.2), rgba(59, 68, 90, 0.1));
-}
-
-.project-box {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.project-title {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(2.5rem, 8vw, 6rem);
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  background: linear-gradient(135deg, var(--text-light) 0%, var(--text-muted) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .project-style {
@@ -613,49 +589,58 @@ blockquote {
   text-align: center;
 }
 
-.contact-style {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  margin-bottom: 3rem;
-  color: var(--text-muted);
+.contact-intro {
+  max-width: 520px;
+  margin: -1.5rem auto 2.5rem;
 }
 
-.centered-word-container {
+.contact-links {
+  list-style: none;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
 }
 
-.centered-word {
-  display: block;
-  font-family: "Playfair Display", serif;
-  font-size: clamp(2rem, 6vw, 4rem);
+.contact-link {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--glass-border);
+  border-radius: 50px;
   color: var(--text-light);
   text-decoration: none;
-  padding: 0.5rem 0;
-  position: relative;
-  transition: all 0.4s var(--transition-smooth);
+  font-weight: 500;
+  transition: border-color 0.3s var(--transition-smooth), color 0.3s var(--transition-smooth);
 }
 
-.centered-word::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
-  transition: all 0.4s var(--transition-smooth);
-  transform: translateX(-50%);
-}
-
-.centered-word:hover {
+.contact-link:hover {
+  border-color: var(--primary-accent);
   color: var(--primary-accent);
 }
 
-.centered-word:hover::before {
-  width: 100%;
+/* ============================================
+   404 PAGE
+   ============================================ */
+.not-found-page {
+  min-height: 80vh;
+  padding: 10rem 2rem 4rem;
+  text-align: center;
+}
+
+.not-found-page .section-title {
+  margin-bottom: 1rem;
+}
+
+.not-found-page p {
+  max-width: 480px;
+  margin: 0 auto 2rem;
+}
+
+.not-found-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 /* ============================================
@@ -687,10 +672,7 @@ footer {
   font-family: "Playfair Display", serif;
   font-size: clamp(3rem, 8vw, 5rem);
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, var(--text-light), var(--text-muted));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-light);
 }
 
 .portfolio-subtitle {
@@ -951,10 +933,7 @@ footer {
   font-family: "Playfair Display", serif;
   font-size: clamp(3rem, 8vw, 5rem);
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, var(--text-light), var(--text-muted));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-light);
 }
 
 .shop-subtitle {
@@ -1684,16 +1663,6 @@ footer {
     margin-top: 0;
   }
   
-  .aboutmewordcontain {
-    padding-left: 2rem;
-    min-height: auto;
-    margin-bottom: 2rem;
-  }
-  
-  .aboutmeword {
-    position: static;
-  }
-  
   .vertical-carousel {
     height: 350px;
     max-width: 400px;
@@ -1792,7 +1761,11 @@ footer {
   .headingtop {
     text-align: center;
   }
-  
+
+  .hero-actions {
+    justify-content: center;
+  }
+
   .paragraphtop {
     max-width: 100%;
   }
@@ -1803,11 +1776,6 @@ footer {
   .portfolio-page,
   .shop-page {
     padding: 4rem 1.5rem;
-  }
-  
-  .aboutmewordcontain {
-    padding-left: 1.5rem;
-    text-align: center;
   }
   
   .portfolio-page,
@@ -1875,10 +1843,6 @@ footer {
   
   .paragraphtop {
     padding: 1rem 1.25rem;
-  }
-  
-  .aboutmewordcontain {
-    padding-left: 1rem;
   }
   
   .portfolio-grid,
