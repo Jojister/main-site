@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { CartIcon } from './Cart';
 
@@ -14,12 +14,45 @@ const NAV_ITEMS = [
 
 const Nav = () => {
   const { t, toggleLanguage } = useLanguage();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  // Close the phone menu whenever the route or section changes.
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname, location.hash]);
+
+  useEffect(() => {
+    if (!isMenuOpen) return undefined;
+    const handleKeyDown = event => {
+      if (event.key === 'Escape') setIsMenuOpen(false);
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isMenuOpen]);
 
   return (
-    <nav>
-      <div className="nav-links">
+    <nav aria-label={t('Main', 'メイン')}>
+      <button
+        type="button"
+        className="nav-menu-btn"
+        aria-expanded={isMenuOpen}
+        aria-controls="nav-links"
+        onClick={() => setIsMenuOpen(open => !open)}
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+          {isMenuOpen ? (
+            <path d="M6 6l12 12M18 6L6 18" />
+          ) : (
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          )}
+        </svg>
+        <span>{t('Menu', 'メニュー')}</span>
+      </button>
+
+      <div id="nav-links" className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
         {NAV_ITEMS.map(item => (
-          <Link key={item.to} to={item.to}>
+          <Link key={item.to} to={item.to} onClick={() => setIsMenuOpen(false)}>
             {t(item.en, item.jp)}
           </Link>
         ))}
@@ -27,7 +60,9 @@ const Nav = () => {
 
       <div className="nav-actions">
         <CartIcon />
-        <button onClick={toggleLanguage}>{t('日本語', 'English')}</button>
+        <button type="button" className="lang-btn" onClick={toggleLanguage}>
+          {t('日本語', 'English')}
+        </button>
       </div>
     </nav>
   );

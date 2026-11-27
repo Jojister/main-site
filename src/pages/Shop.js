@@ -3,6 +3,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { useCart } from '../context/CartContext';
 import productsData from '../data/products.json';
 import imageMap from '../utils/imageMap';
+import useDialog from '../hooks/useDialog';
 
 const Shop = () => {
   const { t } = useLanguage();
@@ -12,6 +13,9 @@ const Shop = () => {
   const [selectedSize, setSelectedSize] = useState(null);
 
   const { prints, commissions, categories } = productsData;
+
+  const closeProductModal = () => setSelectedProduct(null);
+  const dialogRef = useDialog(Boolean(selectedProduct), closeProductModal);
 
   const filteredPrints = activeCategory === 'all' 
     ? prints 
@@ -59,13 +63,9 @@ const Shop = () => {
       {/* Products Grid */}
       <div className="shop-grid">
         {filteredPrints.map(product => (
-          <div 
-            key={product.id} 
-            className="product-card"
-            onClick={() => openProductModal(product)}
-          >
+          <div key={product.id} className="product-card">
             <div className="product-image-wrapper">
-              <img src={imageMap[product.image]} alt={product.title} />
+              <img src={imageMap[product.image]} alt={product.title} loading="lazy" decoding="async" />
               {product.featured && (
                 <span className="product-badge">
                   {t('Featured', '注目')}
@@ -76,7 +76,15 @@ const Shop = () => {
               <span className="product-category">
                 {t(product.categoryLabel, product.categoryLabelJp)}
               </span>
-              <h3>{t(product.title, product.titleJp)}</h3>
+              <h3>
+                <button
+                  type="button"
+                  className="card-open-btn"
+                  onClick={() => openProductModal(product)}
+                >
+                  {t(product.title, product.titleJp)}
+                </button>
+              </h3>
               <p className="product-price">
                 {t(`From $${product.sizes[0].price}`, `$${product.sizes[0].price}から`)}
               </p>
@@ -87,12 +95,21 @@ const Shop = () => {
 
       {/* Product Modal */}
       {selectedProduct && (
-        <div className="product-modal" onClick={() => setSelectedProduct(null)}>
-          <div className="product-modal-content" onClick={e => e.stopPropagation()}>
-            <button 
-              className="modal-close" 
-              onClick={() => setSelectedProduct(null)}
-              aria-label="Close"
+        <div className="product-modal" onClick={closeProductModal}>
+          <div
+            ref={dialogRef}
+            className="product-modal-content"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="product-modal-title"
+            tabIndex={-1}
+            onClick={e => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="modal-close"
+              onClick={closeProductModal}
+              aria-label={t('Close', '閉じる')}
             >
               ✕
             </button>
@@ -106,17 +123,19 @@ const Shop = () => {
                 <span className="product-category">
                   {t(selectedProduct.categoryLabel, selectedProduct.categoryLabelJp)}
                 </span>
-                <h2>{t(selectedProduct.title, selectedProduct.titleJp)}</h2>
+                <h2 id="product-modal-title">{t(selectedProduct.title, selectedProduct.titleJp)}</h2>
                 <p className="product-description">
                   {t(selectedProduct.description, selectedProduct.descriptionJp)}
                 </p>
                 
-                <div className="size-selector">
-                  <label>{t('Select Size:', 'サイズを選択：')}</label>
+                <div className="size-selector" role="group" aria-labelledby="size-selector-label">
+                  <span id="size-selector-label" className="size-selector-label">{t('Select Size:', 'サイズを選択：')}</span>
                   <div className="size-options">
                     {selectedProduct.sizes.map(size => (
                       <button
                         key={size.size}
+                        type="button"
+                        aria-pressed={selectedSize?.size === size.size}
                         className={`size-btn ${selectedSize?.size === size.size ? 'active' : ''}`}
                         onClick={() => setSelectedSize(size)}
                       >

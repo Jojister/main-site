@@ -9,9 +9,8 @@ import dawncamp from "../images/dawncamp.JPG";
 import kyotofestival from "../images/kyotofestival.jpg";
 import osaka from "../images/osaka.jpeg";
 import hokkaido from "../images/hokkaido.jpeg";
-import multimediaflyerfinal from "../images/multimediaflyerfinal.png";
-import bobrossMMAC from "../images/bobrossMMAC.png";
-import totebagredone from "../images/totebagredone.png";
+import bobrossMMAC from "../images/bobrossMMAC.webp";
+import totebagredone from "../images/totebagredone.webp";
 import osakaspace from "../images/osakaspace.jpeg";
 import spacecraft from "../images/spacecraft.jpg";
 import tuolumne from "../images/tuolumne.jpg";
@@ -23,7 +22,6 @@ import manwithbath from "../images/manwithbath.jpg";
 import starcast from "../images/starcast.png";
 import defaux from "../images/defaux.png";
 import summit from "../images/summit-app-icon.png";
-import astrowave from "../images/astrowavebeige.jpg";
 import fishtote from "../images/fishtote.JPG";
 
 const imageMap = {
@@ -35,7 +33,6 @@ const imageMap = {
   kyotofestival,
   osaka,
   hokkaido,
-  multimediaflyerfinal,
   bobrossMMAC,
   totebagredone,
   osakaspace,
@@ -47,7 +44,6 @@ const imageMap = {
   starcast,
   defaux,
   summit,
-  astrowave,
   fishtote,
 };
 

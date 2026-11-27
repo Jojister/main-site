@@ -13,6 +13,7 @@ import Contact from './components/Contact';
 import Portfolio from './pages/Portfolio';
 import Shop from './pages/Shop';
 import Success from './pages/Success';
+import NotFound from './pages/NotFound';
 import Footer from './components/Footer';
 import ScrollToHash from './components/ScrollToHash';
 
@@ -46,6 +47,7 @@ function App() {
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/shop" element={<Shop />} />
               <Route path="/success" element={<Success />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
             
             <Footer />

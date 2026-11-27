@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
-import heroImage from "../images/bluemountains.jpeg"; // Add your photo here
+import heroImage from "../images/bluemountains.jpeg";
 
 function Home() {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   return (
     <section id="home" className="home-section" data-scroll-container>
       <div className="hero-background" style={{ backgroundImage: `url(${heroImage})` }}>
@@ -34,6 +35,15 @@ function Home() {
                 ノースイースターン大学でコンプサイとフィンテック専攻、アラキジョージです。
               </p>
             )}
+          </div>
+
+          <div className="hero-actions">
+            <Link to="/#projects" className="cta-btn primary">
+              {t("See projects", "プロジェクトを見る")}
+            </Link>
+            <Link to="/shop" className="cta-btn secondary">
+              {t("Shop prints", "プリントを購入")}
+            </Link>
           </div>
         </div>
       </div>
